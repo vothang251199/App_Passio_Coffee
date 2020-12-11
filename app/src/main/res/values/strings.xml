@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App_Passio_Coffee</string>
+    <string name="title_tintuc">GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH</string>
+    <string name="title_mota">GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bac">CÒN 50 ĐIỂM NỮA ĐỂ TĂNG HẠNG SILVER</string>
+    <string name="vang">CÒN 200 ĐIỂM NỮA ĐỂ TĂNG HẠNG GOLD</string>
+    <string name="bachkim">CÒN 400 ĐIỂM NỮA ĐỂ TĂNG HẠNG PLATINUM</string>
+</resources>

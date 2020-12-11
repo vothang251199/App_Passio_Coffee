@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".LoginSDT">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/img_back_of_loginsdt"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_arrow_back"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhập số điện thoại"
+            android:layout_marginStart="20dp"
+            android:textColor="#676161"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#F8F6F6"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Nhập số điện thoại"
+            android:textColor="#8BC34A"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="#E8E5E5"
+            android:layout_marginHorizontal="10dp">
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_gravity="center_vertical"
+                app:ccpDialog_fastScroller_bubbleColor="#C3BCBC"
+                app:ccpDialog_fastScroller_handleColor="#D8D2D2"
+                app:ccpDialog_textColor="#000000"
+                app:ccp_defaultLanguage="VIETNAMESE"
+                app:ccp_defaultNameCode="VN"
+                app:ccp_defaultPhoneCode="84"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="16sp" />
+
+            <EditText
+                android:id="@+id/ed_numberphone"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:gravity="center"
+                android:inputType="phone"
+                android:textColor="#8BC34A"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#8BC34A"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="10dp"
+            android:text="Nhấn vào tiếp tục để xác minh số điện thoại của bạn. Chúng tôi sẽ gửi SMS để xác minh số của bạn."
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btn_tiep_sdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiếp"
+            android:textSize="17sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="#E8E5E5"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
