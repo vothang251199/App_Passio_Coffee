@@ -1,5 +1,6 @@
 package com.example.app_passio_coffee.adapter;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,16 +28,16 @@ import com.example.app_passio_coffee.model.Mon;
 import java.util.List;
 
 public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
+
     List<Mon> list;
     int DonGia, Soluong, Tong;
     Dialog dialogView;
-    CardView xemGioHang;
-    ChonMon chonMon;
 
     public void setData(List<Mon> list){
         this.list = list;
         notifyDataSetChanged();
     }
+
 
     @NonNull
     @Override
@@ -52,6 +54,7 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
         if (mon == null){
             return;
         }
+
         holder.imgMon.setImageResource(mon.getImgMon());
         holder.tvTenMon.setText(mon.getTenMon());
         holder.tvGiaMon.setText(mon.getGiaMon());
@@ -65,7 +68,8 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
 
                 TextView tvDgTenmon, tvSoLuong, tvDgGiaMon, tvTongGia;
                 ImageView imgDgMon, imgCong, imgTru, imgCloseDialog;
-                CardView themVaoGioHang;
+                View themVaoGioHang;
+
 
                 tvDgTenmon =  dialogView.findViewById(R.id.tv_dg_tenmon);
                 tvDgGiaMon =  dialogView.findViewById(R.id.tv_dg_giamon);
@@ -76,7 +80,10 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
                 imgTru = dialogView.findViewById(R.id.img_tru);
                 imgCloseDialog = dialogView.findViewById(R.id.img_close_dg);
                 themVaoGioHang = dialogView.findViewById(R.id.layout_themvaogiohang);
-                xemGioHang = chonMon.findViewById(R.id.layout_xemgiohang);
+                //ánh xạ layout xem giỏ hàng từ Activity Chọn Món
+
+
+
 
                 tvDgTenmon.setText(list.get(holder.getAdapterPosition()).getTenMon());
                 tvDgGiaMon.setText(list.get(holder.getAdapterPosition()).getGiaMon());
@@ -121,7 +128,10 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
                 themVaoGioHang.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        ChonMon.tv_XemGH_TongGia.setText(tvTongGia.getText());
+                        ChonMon.tv_XemGH_SoLuong.setText(tvSoLuong.getText());
+                        dialogView.dismiss();
+                        ChonMon.xemGioHang.setVisibility(View.VISIBLE);
                     }
                 });
 

@@ -88,14 +88,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        adapterTinTuc = new AdapterTinTuc();
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         rcvTinTuc.setLayoutManager(gridLayoutManager);
         rcvTinTuc.setFocusable(false);
         rcvTinTuc.setNestedScrollingEnabled(false);
+        rcvTinTuc.setAdapter(adapterTinTuc);
 
         adapterTinTuc.setData(getListTinTuc());
-        rcvTinTuc.setAdapter(adapterTinTuc);
+        adapterTinTuc = new AdapterTinTuc();
+
     }
 
     private List<TinTuc> getListTinTuc(){
