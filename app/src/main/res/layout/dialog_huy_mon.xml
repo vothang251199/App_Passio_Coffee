@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Bạn có chắc muốn Làm mới giỏ hàng?"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"
+        android:text="Chức năng này sẽ xóa tất cả thức uống và món ăn đã chọn trước đó."/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="30dp">
+            <TextView
+                android:id="@+id/tv_dg_huy"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Hủy"
+                android:background="@color/gray"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="30dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            app:cardCornerRadius="30dp">
+            <TextView
+                android:id="@+id/tv_dg_dongy"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Đồng ý"
+                android:background="@color/green"
+                android:paddingVertical="15dp"
+                android:paddingHorizontal="30dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

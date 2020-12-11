@@ -46,10 +46,10 @@ public class Fragment_ChonMon_Ice extends Fragment {
     private List<Mon> getListMon(){
         List<Mon> monList = new ArrayList<>();
         monList.add(new Mon(R.drawable.ic_drink_test, "Passiopuccino", "36.000đ"));
-        monList.add(new Mon(R.drawable.ic_drink_test, "Cookie'n Cream", "39.000đ"));
-        monList.add(new Mon(R.drawable.ic_drink_test, "Matcha Green Tea", "49.000đ"));
-        monList.add(new Mon(R.drawable.ic_drink_test, "Iced Chôclate", "44.000đ"));
-        monList.add(new Mon(R.drawable.ic_drink_test, "PassioChoco", "39.000đ"));
+        monList.add(new Mon(R.drawable.ic_drink1, "Cookie'n Cream", "39.000đ"));
+        monList.add(new Mon(R.drawable.ic_drink2, "Matcha Green Tea", "49.000đ"));
+        monList.add(new Mon(R.drawable.ic_drink3, "Iced Chôclate", "44.000đ"));
+        monList.add(new Mon(R.drawable.ic_drink4, "PassioChoco", "39.000đ"));
         monList.add(new Mon(R.drawable.ic_drink_test, "Passiopuccino With Caramel", "46.000đ"));
 
         return monList;

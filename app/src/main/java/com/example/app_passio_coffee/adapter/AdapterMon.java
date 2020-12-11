@@ -31,7 +31,9 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
 
     List<Mon> list;
     int DonGia, Soluong, Tong;
-    Dialog dialogView;
+    public static int TongGiaGh = 0, TongSoLuongGh = 0;
+    Dialog dialogView, dialogHuy;
+    public View viewSo;
 
     public void setData(List<Mon> list){
         this.list = list;
@@ -58,6 +60,44 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
         holder.imgMon.setImageResource(mon.getImgMon());
         holder.tvTenMon.setText(mon.getTenMon());
         holder.tvGiaMon.setText(mon.getGiaMon());
+
+        ChonMon.imgRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialogHuy = new Dialog(v.getRootView().getContext());
+                dialogHuy.setContentView(R.layout.dialog_huy_mon);
+                dialogHuy.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                TextView tvDongY, tvHuy;
+
+                tvDongY = dialogHuy.findViewById(R.id.tv_dg_dongy);
+                tvDongY.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        viewSo.setVisibility(View.GONE);
+                        TongGiaGh =0;
+                        TongSoLuongGh = 0;
+                        //ChonMon.xemGioHang.setVisibility(View.GONE);
+                        ChonMon.imgRefresh.setVisibility(View.GONE);
+
+
+
+                        dialogHuy.dismiss();
+                    }
+                });
+
+                tvHuy = dialogHuy.findViewById(R.id.tv_dg_huy);
+                tvHuy.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialogHuy.dismiss();
+                    }
+                });
+
+                dialogHuy.show();
+            }
+        });
+
         holder.itemMon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +110,6 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
                 ImageView imgDgMon, imgCong, imgTru, imgCloseDialog;
                 View themVaoGioHang;
 
-
                 tvDgTenmon =  dialogView.findViewById(R.id.tv_dg_tenmon);
                 tvDgGiaMon =  dialogView.findViewById(R.id.tv_dg_giamon);
                 imgDgMon =  dialogView.findViewById(R.id.img_dg_mon);
@@ -80,10 +119,6 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
                 imgTru = dialogView.findViewById(R.id.img_tru);
                 imgCloseDialog = dialogView.findViewById(R.id.img_close_dg);
                 themVaoGioHang = dialogView.findViewById(R.id.layout_themvaogiohang);
-                //ánh xạ layout xem giỏ hàng từ Activity Chọn Món
-
-
-
 
                 tvDgTenmon.setText(list.get(holder.getAdapterPosition()).getTenMon());
                 tvDgGiaMon.setText(list.get(holder.getAdapterPosition()).getGiaMon());
@@ -125,13 +160,28 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
                     }
                 });
 
+
+
+                String xemDhTongGia = (String) ChonMon.tv_XemGH_TongGia.getText();
+                String xemDhTongSoLuong = (String) ChonMon.tv_XemGH_SoLuong.getText();
+
                 themVaoGioHang.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ChonMon.tv_XemGH_TongGia.setText(tvTongGia.getText());
-                        ChonMon.tv_XemGH_SoLuong.setText(tvSoLuong.getText());
+                        TongGiaGh += Tong;
+                        TongSoLuongGh += Soluong;
+                        ChonMon.tv_XemGH_TongGia.setText(String.valueOf(TongGiaGh) + ".000đ");
+                        ChonMon.tv_XemGH_SoLuong.setText(String.valueOf(TongSoLuongGh));
+
+
                         dialogView.dismiss();
+
                         ChonMon.xemGioHang.setVisibility(View.VISIBLE);
+                        ChonMon.v1.setVisibility(View.VISIBLE);
+                        ChonMon.imgRefresh.setVisibility(View.VISIBLE);
+                        viewSo.setVisibility(View.VISIBLE);
+                        holder.tvSo.setText(String.valueOf(Soluong));
+
                     }
                 });
 
@@ -151,14 +201,16 @@ public class AdapterMon extends RecyclerView.Adapter<AdapterMon.MonViewHolder>{
 
     public class MonViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgMon;
-        private TextView tvTenMon;
-        private TextView tvGiaMon;
-        private CardView itemMon;
+        private TextView tvTenMon, tvGiaMon, tvSo;
+        private View itemMon;
 
 
         public MonViewHolder(@NonNull View itemView) {
             super(itemView);
             itemMon = itemView.findViewById(R.id.item_mon);
+            viewSo = itemView.findViewById(R.id.view_so);
+            viewSo.setVisibility(View.GONE);
+            tvSo = itemView.findViewById(R.id.tv_so);
             imgMon = itemView.findViewById(R.id.img_mon);
             tvTenMon = itemView.findViewById(R.id.tv_tenmon);
             tvGiaMon = itemView.findViewById(R.id.tv_giamon);

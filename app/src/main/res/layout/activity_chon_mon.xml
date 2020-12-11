@@ -3,29 +3,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout_back_chonmon"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp">
         <ImageView
             android:id="@+id/img_back_of_chonmon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
             android:src="@drawable/ic_arrow_back"
             />
         <TextView
+            android:layout_toEndOf="@+id/img_back_of_chonmon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="Chọn món"
             android:layout_marginStart="20dp"
             android:textColor="#000000"
             android:textSize="20sp"
             />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/img_refresh"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_refresh"
+            />
+    </RelativeLayout>
     <com.google.android.material.tabs.TabLayout
         android:layout_below="@+id/layout_back_chonmon"
         android:layout_centerHorizontal="true"
@@ -43,7 +56,14 @@
         android:layout_below="@+id/tab_layout_chonmon"
         android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
+        android:layout_above="@+id/v1"
         android:layout_height="wrap_content"/>
+    <View
+        android:id="@+id/v1"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layout_xemgiohang"
@@ -51,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginHorizontal="10dp"
         app:cardCornerRadius="10dp">
         <RelativeLayout
@@ -66,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Giá món"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
             <ImageView
@@ -82,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Số món"
+                android:text="0"
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/img_xemgiohang_cham"
                 android:textColor="@color/white"

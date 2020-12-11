@@ -1,8 +1,10 @@
 package com.example.app_passio_coffee;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,9 +22,10 @@ public class ChonMon extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mviewPager;
     private ImageView imgBackOfChonMon;
-    public static View xemGioHang;
+    public static View xemGioHang, v1;
     public static TextView tv_XemGH_TongGia;
     public static TextView tv_XemGH_SoLuong;
+    public static ImageView imgRefresh;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +42,11 @@ public class ChonMon extends AppCompatActivity {
 
         mviewPager = findViewById(R.id.view_pager_chonmon);
         mTabLayout = findViewById(R.id.tab_layout_chonmon);
+        v1 = findViewById(R.id.v1);
+        v1.setVisibility(View.GONE);
+
+        imgRefresh = findViewById(R.id.img_refresh);
+        imgRefresh.setVisibility(View.GONE);
 
         xemGioHang = findViewById(R.id.layout_xemgiohang);
         xemGioHang.setVisibility(View.GONE);

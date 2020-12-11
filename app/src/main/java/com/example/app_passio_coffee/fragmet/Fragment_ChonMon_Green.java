@@ -46,7 +46,7 @@ public class Fragment_ChonMon_Green extends Fragment {
     private List<Mon> getListMon(){
         List<Mon> monList = new ArrayList<>();
         monList.add(new Mon(R.drawable.ic_drink_test, "Choco XMas (L)", "55.000đ"));
-        monList.add(new Mon(R.drawable.ic_drink_test, "Cookie XMas (L)", "55.000đ"));
+        monList.add(new Mon(R.drawable.ic_drink1, "Cookie XMas (L)", "55.000đ"));
 
         return monList;
     }

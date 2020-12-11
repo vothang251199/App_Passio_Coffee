@@ -1,41 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
     android:layout_marginTop="10dp"
     android:id="@+id/item_mon"
-    android:layout_marginHorizontal="8dp"
+    android:layout_marginHorizontal="10dp"
     android:layout_height="wrap_content">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-        <ImageView
-            android:id="@+id/img_mon"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/ic_no_internet"
-            android:scaleType="centerCrop"/>
-        <TextView
-            android:id="@+id/tv_tenmon"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@string/app_name"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-        <TextView
-            android:id="@+id/tv_giamon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="10dp"
-            android:text="36.000đ"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:orientation="vertical"
+            android:paddingHorizontal="15dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/img_mon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_no_internet"
+                android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/tv_tenmon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_name"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tv_giamon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="36.000đ"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
 
-    </LinearLayout>
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view_so"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+
+            app:cardCornerRadius="5dp">
+            <RelativeLayout
+                android:background="#FF5722"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:id="@+id/tv_so"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
