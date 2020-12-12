@@ -9,25 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_Passio_Coffee">
-        <activity android:name=".GioHang">
-
-        </activity>
+        <activity android:name=".ChiTiet"></activity>
+        <activity android:name=".GioHang"></activity>
         <activity android:name=".TheThanhVien" />
         <activity android:name=".DinhVi" />
         <activity android:name=".ThongBao" />
         <activity android:name=".Profile" />
         <activity android:name=".Coupon" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ChonMon">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ChonMon"></activity>
+        <activity android:name=".Load">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Load" />
         <activity android:name=".Login" />
-        <activity android:name=".LoginSDT" />
+        <activity android:name=".LoginSDT"></activity>
     </application>
 
 </manifest>

@@ -23,7 +23,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView rcvTinTuc;
     private AdapterTinTuc adapterTinTuc;
-    private ImageView imgCoupon, imgChuong, imgDinhVi, imgTheTV;
+    private ImageView imgCoupon, imgChuong, imgDinhVi, imgTheTV, imgAvata, imgUuDaiChoBan;
     private View layoutNameView;
     private FloatingActionButton btnOrder;
 
@@ -32,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rcvTinTuc = findViewById(R.id.rcv_tintuc);
+
+        imgAvata = findViewById(R.id.img_avata);
+        imgUuDaiChoBan = findViewById(R.id.img_uu_dai_choban);
+        imgUuDaiChoBan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ChiTiet.class);
+                startActivity(i);
+            }
+        });
 
         imgCoupon = findViewById(R.id.img_coupon);
         imgCoupon.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Profile.class);
-                intent.putExtra("imgCustomer", R.drawable.ic_avatar);
+                intent.putExtra("imgCustomer", R.id.img_avata);
                 startActivity(intent);
             }
         });
@@ -88,36 +98,39 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        adapterTinTuc = new AdapterTinTuc();
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         rcvTinTuc.setLayoutManager(gridLayoutManager);
         rcvTinTuc.setFocusable(false);
         rcvTinTuc.setNestedScrollingEnabled(false);
-        rcvTinTuc.setAdapter(adapterTinTuc);
+
 
         adapterTinTuc.setData(getListTinTuc());
-        adapterTinTuc = new AdapterTinTuc();
+        rcvTinTuc.setAdapter(adapterTinTuc);
+
+
 
     }
 
     private List<TinTuc> getListTinTuc(){
         List<TinTuc> tinTucs = new ArrayList<>();
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc2, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc3, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc4, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc5, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc2, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc3, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
-        tinTucs.add(new TinTuc(R.drawable.ic_membership1, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
+        tinTucs.add(new TinTuc(R.drawable.tintuc4, "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH",
                 "GREEN XMAS - MỪNG GIÁNG SINH, MỘT GIÁNG SINH AN LÀNH, mùa giáng sinh lại đến đánh dấu sự..."));
         return tinTucs;
     }

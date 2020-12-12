@@ -47,7 +47,7 @@
                 android:paddingHorizontal="15dp"
                 android:paddingTop="15dp">
                 <TextView
-                    android:id="@+id/tv_dg_tenmon"
+                    android:id="@+id/tv_soluong_mon_dat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Danh sách món"
@@ -73,6 +73,7 @@
                     android:textSize="20sp"
                     android:textColor="@color/black"/>
                 <TextView
+                    android:id="@+id/tv_gh_diachi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vui lòng nhập địa chỉ giao hàng tại đây"
@@ -146,6 +147,7 @@
                             android:layout_centerVertical="true"
                             android:textSize="18sp"/>
                         <TextView
+                            android:id="@+id/tv_gh_tamtinh"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Giá tạm tính đ"
@@ -166,9 +168,10 @@
                             android:layout_centerVertical="true"
                             android:textSize="18sp"/>
                         <TextView
+                            android:id="@+id/tv_gh_phigiaohang"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Giá giao hàng đ"
+                            android:text="15.000đ"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:textSize="18sp"/>
@@ -186,9 +189,10 @@
                             android:layout_centerVertical="true"
                             android:textSize="18sp"/>
                         <TextView
+                            android:id="@+id/tv_gh_tiengiam"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Giảm giá đ"
+                            android:text="- 0đ"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:textSize="18sp"/>
@@ -216,6 +220,7 @@
                             android:textSize="19sp" />
 
                         <TextView
+                            android:id="@+id/tv_gh_tonggia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -276,12 +281,14 @@
         android:layout_marginHorizontal="15dp"
         app:cardCornerRadius="10dp">
         <RelativeLayout
+            android:id="@+id/view_dat_hang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
+            android:background="@color/green"
             android:paddingHorizontal="20dp"
             android:paddingVertical="12dp">
             <TextView
+                android:id="@+id/tv_gh_tonggiadat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"

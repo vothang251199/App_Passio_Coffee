@@ -6,19 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Profile extends AppCompatActivity {
     private ImageView imgAvata, imgBackOfProfile;
-    private View layoutCPofToi;
+    private View layoutCPofToi, viewToThetv, viewTTCN;
+    TextView tv_DangXuat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
         imgAvata = findViewById(R.id.img_avta_profile);
-        Bundle bundle = getIntent().getExtras();
-        int img = bundle.getInt("imgCustomer");
-        imgAvata.setImageResource(img);
+
 
         layoutCPofToi = findViewById(R.id.layout_cp_of_toi);
         layoutCPofToi.setOnClickListener(new View.OnClickListener() {
@@ -37,5 +37,27 @@ public class Profile extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        tv_DangXuat = findViewById(R.id.tv_dang_xuat);
+        tv_DangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Profile.this, Login.class);
+                startActivity(i);
+            }
+        });
+
+        viewToThetv = findViewById(R.id.view_to_thetv);
+        viewToThetv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Profile.this, TheThanhVien.class);
+                startActivity(i);
+            }
+        });
+
+        viewTTCN = findViewById(R.id.view_ttcn);
+
+
     }
 }

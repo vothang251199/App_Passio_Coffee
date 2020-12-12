@@ -41,6 +41,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_width="380dp"
                 android:layout_height="200dp"
+
                 app:cardCornerRadius="10dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@color/green">
@@ -50,9 +51,11 @@
                     android:background="@color/green"
                     android:layout_margin="10dp">
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_membership1"/>
+                        android:layout_margin="10dp"
+                        android:layout_width="340dp"
+                        android:layout_height="160dp"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_barcode_demo"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <TextView
@@ -125,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:text="Green"
                         android:layout_weight="1"
-                        android:textColor="#918E8E"
+                        android:textColor="#716D6D"
                         android:textSize="14sp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -154,7 +157,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="7dp"
+                    android:layout_height="5dp"
                     android:background="@color/gray"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="10dp"

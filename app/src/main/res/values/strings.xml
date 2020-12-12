@@ -7,4 +7,7 @@
     <string name="bac">CÒN 50 ĐIỂM NỮA ĐỂ TĂNG HẠNG SILVER</string>
     <string name="vang">CÒN 200 ĐIỂM NỮA ĐỂ TĂNG HẠNG GOLD</string>
     <string name="bachkim">CÒN 400 ĐIỂM NỮA ĐỂ TĂNG HẠNG PLATINUM</string>
+    <string name="chi30s">Chỉ cần 30s nạp tiền trực tiếp tại quầy của các cửa hàng Passio. Bạn sẽ nhận được những Ưu đãi KHỦNG cho lần nạp đầu tiên:</string>
+    <string name="chi30s1">CÒN 400 ĐIỂM NỮA ĐỂ TĂNG HẠNG PLATINUM</string>
+    <string name="chi30s2">CÒN 400 ĐIỂM NỮA ĐỂ TĂNG HẠNG PLATINUM</string>
 </resources>

@@ -39,7 +39,7 @@ public class AdapterGioHang extends RecyclerView.Adapter<AdapterGioHang.GioHangV
             return;
         }
 
-        holder.imgGhMon.setImageResource(itemGioHang.getImgMon());
+        holder.imgGhMon.setImageDrawable(itemGioHang.getImgMon().getDrawable());
         holder.tvGhTenMon.setText(itemGioHang.getTenMon());
         holder.tvGhGiaMon.setText(itemGioHang.getGiaMon());
         holder.tvGhSoLuong.setText(itemGioHang.getSoLuongMon());
